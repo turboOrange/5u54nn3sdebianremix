@@ -17,12 +17,10 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y live-build
-        sudo apt-get install -y dpkg
-        sudo apt-get install -y dpkg-dev
 
     - name: Configure live-build
       run: |
-        sudo lb config
+        sudo lb config --distribution jammy --archive-areas "main universe multiverse restricted"
 
     - name: Build the ISO
       run: |
