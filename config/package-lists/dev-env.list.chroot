@@ -7,15 +7,3 @@ wget
 code
 python3
 python3-pip
-python3-venv
-gcc
-g++
-clang
-make
-cmake
-rust-all
-nodejs
-npm
-docker.io
-docker-compose
-kwin-bismuth
