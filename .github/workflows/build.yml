@@ -1,0 +1,33 @@
+name: Build Custom Debian ISO
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install live-build
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y live-build
+
+    - name: Configure live-build
+      run: |
+        sudo lb config
+
+    - name: Build the ISO
+      run: |
+        sudo lb build
+
+    - name: Upload ISO
+      uses: actions/upload-artifact@v3
+      with:
+        name: custom-debian-iso
+        path: live-image-amd64.hybrid.iso
