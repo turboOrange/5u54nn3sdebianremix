@@ -27,7 +27,7 @@ jobs:
         sudo lb build
 
     - name: Upload ISO
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: custom-debian-iso
         path: live-image-amd64.hybrid.iso
